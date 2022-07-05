@@ -15,11 +15,15 @@ public class DepartmentService {
 
 
     public Employee findEmployeeWithMaxSalaryFromDepartment(int department) {
+        Comparable<>
         return EmployeeService.getAll.stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .max
     }
 
     public Employee findEmployeeWithMaxSalaryFromDepartment(int department) {
         return null;
+        .
     }
     public static List<Employee> findEmployeeFromDepartment(int department) {
         return null;
