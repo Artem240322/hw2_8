@@ -65,4 +65,6 @@ public class Employee {
     public String toString() {
         return String.format("ФИ: %s, %s, Отдел: %d, ЗП: % 2f",  surname, name, department, salary);
     }
+
 }
+
