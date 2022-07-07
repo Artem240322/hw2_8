@@ -1,37 +1,44 @@
 package com.example.hw2_8.service;
 
+import com.example.hw2_8.exception.EmployeeNotFoundException;
 import com.example.hw2_8.model.Employee;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DepartmentService {
 
-    private final EmployeeService employeeService;
+    private static EmployeeService employeeService;
 
     public DepartmentService(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
 
-    public Employee findEmployeeWithMaxSalaryFromDepartment(int department) {
-        Comparable<>
-        return EmployeeService.getAll.stream()
+    public static Employee findEmployeeWithMaxSalaryFromDepartment(int department) {
+        return employeeService.getAll().stream()
                 .filter(employee -> employee.getDepartment() == department)
-                .max
+                .max(Comparator.comparingDouble(Employee::getSalary))
+                .orElseThrow(EmployeeNotFoundException::new);
     }
 
-    public Employee findEmployeeWithMaxSalaryFromDepartment(int department) {
-        return null;
-        .
+    public static Employee findEmployeeWithMinSalaryFromDepartment(int department) {
+        return employeeService.getAll().stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .min(Comparator.comparingDouble(Employee::getSalary))
+                .orElseThrow(EmployeeNotFoundException::new);
     }
     public static List<Employee> findEmployeeFromDepartment(int department) {
-        return null;
+        return employeeService.getAll().stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .collect(Collectors.toList());
     }
 
     public static Map<Integer, List<Employee>> findEmployee() {
-
+        return employeeService.getAll().stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment));
     }
-
 
 }

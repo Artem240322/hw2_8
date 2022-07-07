@@ -15,7 +15,6 @@ public class Employee implements Comparable<Employee>{
     private final int department;
     private final double salary;
 
-
     public Employee(String name,
                     String surname,
                     int department,
@@ -30,10 +29,8 @@ public class Employee implements Comparable<Employee>{
     public String getName() {
         return name;
     }
-
     public String getSurname() {
         return surname;
-
     }
 
     public int getDepartment() {
@@ -58,12 +55,13 @@ public class Employee implements Comparable<Employee>{
 
     @Override
     public int hashCode() {
+
         return Objects.hash(name, surname, department, salary);
     }
 
     @Override
     public String toString() {
-        return String.format("ФИ: %s, %s, Отдел: %d, ЗП: % 2f",  surname, name, department, salary);
+        return String.format("ФИ: %s %s, Отдел: %d, ЗП: %.2f",  surname, name, department, salary);
     }
 
     @Override

@@ -27,7 +27,7 @@ public class EmployeeService {
     public Employee add(String name,
                         String surname
                         int department,
-                        double salary) {
+                        double salary, double v) {
         Employee employee = new Employee(name, surname, department, salary);
         String key = getKey(name, surname);
         if (employees.containsKey(key)) {
