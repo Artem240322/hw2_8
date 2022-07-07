@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class DepartmentService {
 
-    private final EmployeeService employeeService;
+    private static EmployeeService employeeService;
 
     public DepartmentService(EmployeeService employeeService) {
         this.employeeService = employeeService;
