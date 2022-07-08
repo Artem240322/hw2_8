@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -16,10 +15,10 @@ import java.util.Map;
 @RequestMapping("/departments")
 public class DepartmentController {
 
-    private final DepartmentService departmentService;
+    private DepartmentService departmentService;
 
-    public DepartmentController(DepartmentService departmentService) {
-        this.departmentService = departmentService;
+    public DepartmentController(DepartmentService departmentController) {
+        this.departmentService = departmentController;
     }
 
     @GetMapping("/max-salary")
