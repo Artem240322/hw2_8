@@ -17,8 +17,8 @@ public class DepartmentController {
 
     private DepartmentService departmentService;
 
-    public DepartmentController(DepartmentService departmentController) {
-        this.departmentService = departmentController;
+    public DepartmentController(DepartmentService departmentService) {
+        this.departmentService = departmentService;
     }
 
     @GetMapping("/max-salary")
