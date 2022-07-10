@@ -2,15 +2,17 @@ package com.example.hw2_8.service;
 
 import com.example.hw2_8.exception.EmployeeNotFoundException;
 import com.example.hw2_8.model.Employee;
+import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@Service
 public class DepartmentService {
 
-    private static EmployeeService employeeService;
+private static EmployeeService employeeService;
 
     public DepartmentService(EmployeeService employeeService) {
         this.employeeService = employeeService;

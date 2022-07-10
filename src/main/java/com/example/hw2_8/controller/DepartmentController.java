@@ -16,11 +16,9 @@ import java.util.Map;
 public class DepartmentController {
 
     private DepartmentService departmentService;
-
-    public DepartmentController(DepartmentService departmentController) {
-        this.departmentService = departmentController;
+    public DepartmentController(DepartmentService departmentService) {
+        this.departmentService = departmentService;
     }
-
     @GetMapping("/max-salary")
     public Employee findEmployeeWithMaxSalaryFromDepartment(@RequestParam("departmentId") int department) {
         return DepartmentService.findEmployeeWithMaxSalaryFromDepartment(department);
@@ -41,5 +39,4 @@ public class DepartmentController {
         return DepartmentService.findEmployee();
 
     }
-
 }
