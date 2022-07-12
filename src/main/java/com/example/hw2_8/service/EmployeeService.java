@@ -8,17 +8,16 @@ import com.example.hw2_8.model.Employee;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
-public class EmployeeService {
+public abstract class EmployeeService {
 
     private static final int LIMIT = 10;
 
     private final Map<String, Employee> employees = new HashMap<>();
+
+    public abstract Collection<Employee> findAll();
 
     private String getKey(String name, String surname) {
         return name + "|" + surname;
@@ -59,5 +58,8 @@ public class EmployeeService {
         return new ArrayList<>(employees.values());
     }
 
+    public abstract Employee add(String firstName, String lastName, salry, int departmentId);
+
+    public abstract Employee add(String firstName, String lastName, double salary, int departmentId);
 }
 
